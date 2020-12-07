@@ -1,5 +1,8 @@
 *,
-html {
+html, 
+body, 
+div, 
+a {
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -37,11 +40,11 @@ body {
 }
 
 .header__navigation__burger>div {
-    width: 32px;
-    height: 4px;
+    width: 88px;
+    height: 8px;
     background-color: rgb(205, 205, 205);
-    margin: 5px;
-    border-radius: 3px;
+    margin: 22px;
+    border-radius: 13px;
     transition: all 0.5s ease;
 }
 
@@ -49,7 +52,7 @@ body {
     display: flex;
     flex-direction: column;
     position: absolute;
-    width: 20vw;
+    width: 13vw;
     font-family: 'Luckiest Guy', cursive;
     height: -webkit-fill-available;
     overflow: hidden;
@@ -69,8 +72,8 @@ body {
 
 @media screen and (max-width: 1220px) {
     .navigation__items {
-        padding: 200px 20px 20px;
-        width: 22vw;
+        width: 25vw;
+        font-size: 4rem;
         height: -webkit-fill-available;
     }
 }
@@ -84,7 +87,8 @@ body {
 
 @media screen and (max-width: 850px) {
     .navigation__items {
-        width: 32vw;
+        width: 36vw;
+        font-size: 3.6rem;
         height: -webkit-fill-available;
     }
 }
@@ -92,7 +96,7 @@ body {
 @media screen and (max-width: 650px) {
     .navigation__items {
         padding: 200px 10px 10px;
-        width: 42vw;
+        width: 59vw;
     }
 }
 
@@ -104,10 +108,10 @@ body {
 
 @media screen and (max-width: 435px) {
     .navigation__items {
-        width: 100vw;
+        width: 120vw;
+        height: 120vh;
     }
 }
-
 .navigation__items-active {
     transform: translateX(0%);
 }
@@ -142,18 +146,7 @@ body {
     transition: .3s;
 }
 
-@media screen and (max-width: 1295px) {
-    .navigation__link {
-        font-size: 20px;
-    }
-}
 
-@media screen and (max-width: 435px) {
-    .navigation__link {
-        font-size: 26px;
-        padding-bottom: 20px;
-    }
-}
 
 .toggle .header__navigation__burger-line1 {
     transform: rotate(-45deg) translate(-9px, 10px);
@@ -176,7 +169,7 @@ body {
 .switch {
     position: absolute;
     top: 0;
-    right: 100%;
+    right: -10%;
     display: inline-block;
     vertical-align: top;
     width: 120px;
@@ -339,12 +332,20 @@ body {
 }
 
 .main-card:hover {
-    box-shadow: -32px 19px 22px 0 rgba(34, 26, 26, 0.966), 17px 19px 27px 0 rgba(241, 239, 239, 0.808);
+    width: 320px;
+    height: 330px;
+    font-size: 44px;
+    line-height: 66px;
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+    transition: .2s;
+    margin: 0;
+    box-shadow: 3px 3px 3px 1px rgba(158, 62, 62, 0.966), 33px 33px 33px 3px rgba(241, 239, 239, 0.808);
 }
 
 .main-card img {
-    width: 240px;
-    height: 230px;
+    width: 250px;
+    height: 220px;
     border-radius: 50%;
     border: 1px solid #fff;
     object-fit: cover;
@@ -357,13 +358,12 @@ body {
     transform-style: preserve-3d;
     display: flex;
     box-sizing: border-box;
-    justify-content: flex-end;
+    justify-content: flex-start;
     width: 280px;
-    height: 320px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    height: 300px;
     margin: 20px 25px;
-    box-shadow: 0 1px 3px 0 #ccc;
+    border: 5px solid darkblue;
+    border-radius: 22px;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .4);
     -webkit-transition: box-shadow .25s linear, -webkit-transform .7s;
     transition: box-shadow .25s linear, -webkit-transform .7s;
@@ -372,16 +372,32 @@ body {
 }
 
 .card:hover {
+    height: 330px;
+    width: 300px;
+    transition: .3s;
+    margin: 0;
     box-shadow: 0 19px 22px 0 rgba(0, 0, 0, .26), 0 19px 27px 0 rgba(187, 20, 20, 0.808);
 }
-
+.card img {
+    width: 250px;
+    height: 220px;
+    border-radius: 25px;
+    border: 1px solid #fff;
+    object-fit: cover;
+    margin: 10px auto;
+}
 .front {
-    display: flex;
-    position: absolute;
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    display: block;
+    box-sizing: border-box;
     width: 100%;
     top: 0;
     bottom: 0;
+    border-radius: 15px;
     background-size: contain;
+    box-shadow: 0 19px 22px 0 rgba(0, 0, 0, .26), 0 19px 27px 0 rgba(187, 20, 20, 0.808);
     background-repeat: no-repeat;
     transition: .3s;
     cursor: pointer;
@@ -389,7 +405,7 @@ body {
 
 .card-header {
     margin-top: 230px;
-    padding: 22px 29px;
+    padding: 0 0;
     font-family: 'Luckiest Guy', cursive;
     font-size: 46px;
     line-height: 45px;
@@ -401,18 +417,21 @@ body {
 }
 
 .back {
-    display: flex;
+    display: block;
     position: absolute;
+    cursor: pointer;
     width: 100%;
     top: 0;
     bottom: 0;
+    border-radius: 15px;
+    background-size: contain;
     background-size: contain;
     background-repeat: no-repeat;
     transition: .3s;
 }
-
 .back {
     transform: rotateY(180deg);
+    transition: .4s;
 }
 
 .back,
@@ -424,6 +443,7 @@ body {
 .translate {
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
+    transition: 3s;
 }
 
 .rotate {
@@ -436,13 +456,13 @@ body {
     background-position: center 16px;
     bottom: 5px;
     right: 5px;
-    transition: .3s;
+    transition: .8s;
     filter: grayscale(1);
     cursor: pointer;
 }
 
 .rotate:hover {
-    transform: scale(1.3);
+    transform: scale(1.2);
 }
 
 .start-game {

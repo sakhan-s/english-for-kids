@@ -227,7 +227,7 @@ const cardsPlayMode = () => {
         c.classList.add('hidden');
     })
     front_side_card.forEach(f => {
-        f.style.cssText += "background-size: cover; background-position: 50%;"
+        f.style.cssText += "background-size: inherit; border-radius: 25px; background-position: 50%; width: 100%;"
     })
 }
 
